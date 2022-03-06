@@ -1,0 +1,19 @@
+.records {
+	width: 1365px;
+	margin-top: 40px;
+	border-collapse: collapse;
+	font-family: 'Nunito', sans-serif;
+}
+
+.heading {
+	padding: 6px;
+	font-size: 17px;
+}
+
+.record {
+	text-align: center;
+}
+
+td {
+	padding: 5px 0px;
+}

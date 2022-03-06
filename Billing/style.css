@@ -1,0 +1,91 @@
+body {
+	margin: 0px;
+	background-image: url(../Resources/Images/billing-bgimage.png);
+}
+
+.main {
+	margin-left: 60px;
+	margin-top: 50px;
+	margin-right: 60px;
+}
+
+.basic-details {
+	margin-left: 90px;
+	display: flex;
+	font-family: 'Nunito', sans-serif;
+}
+
+.input-labels {
+	display: flex;
+	flex-direction: column;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.input-fields {
+	display: flex;
+	flex-direction: column;
+	margin-left: 50px;
+}
+
+.input-labels label {
+	margin-top: 20px;
+	color: #575757;
+}
+
+.input-fields input {
+	font-size: 16px;
+	padding: 5px 8px;
+	margin-top: 20px;
+	border: none;
+	background: rgba(159, 159, 159, 0.3);
+}
+
+.new-item {
+	text-align: center;
+}
+
+.new-item-button {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 4px;
+	border: 2px solid black;
+	background-color: #FFFFFF;
+}
+
+.new-item-button:hover {
+	background-color: #9E9E9E;
+}
+
+.balances {
+	display: flex;
+	flex-direction: row-reverse;
+	font-family: 'Nunito', sans-serif;
+	margin-top: 50px;
+}
+
+.balance-table {
+	border-collapse: collapse;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.balance-table .heading {
+	width: 165px;
+}
+
+.balance-table .content {
+	width: 130px;
+}
+
+.generate-bill {
+	display: flex;
+	flex-direction: row-reverse;
+	margin-top: 30px;
+}
+
+.generate-bill-button {
+	width: 130px;
+}

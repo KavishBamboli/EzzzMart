@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sales | EzzzMart</title>
+	<link rel="stylesheet" type="text/css" href="../Resources/Styles/HeaderStyles.css">
+	<link rel="stylesheet" type="text/css" href="../Resources/Styles/TableStyles.css">
+	<link rel="stylesheet" type="text/css" href="../Resources/Styles/FooterStyles.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="header">
+		<div class="company-name">
+			<img src="../Resources/Images/defaultLogo.png" alt="" width="70px" height="70px">
+			<h2>Company Name</h2>
+		</div>
+		<div class="title">
+			<h1>Sales</h1>
+		</div>
+		<div class="right-section">
+			<div class="username">
+				<img src="../Resources/Images/accountCircle.png" alt="" width="56px" height="50px">
+				<h3>Username</h3>
+			</div>
+			<div class="menu">
+				<a href="#"><img src="../Resources/Images/dropdown.png" alt="" width="45px" height="30px"></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="main">
+		<h2>View Sales Records</h2>
+		<div class="top-section">
+			<div class="search">
+				<div class="date-input">
+					<div class="date-picker">
+						<h3>Start Date</h3>
+						<input type="date" class="date" value="">
+					</div>
+					<h2>To</h2>
+					<div class="date-picker">
+						<h3>End Date</h3>
+						<input type="date" class="date" value="">
+					</div>
+				</div>
+				<button class="go-btn"><img src="../Resources/Images/Go.png" width="35px" height="35px"></button>
+				<div class="search-box">
+					<h2>Or</h2>
+					<input type="text" class="search" name="searchId" placeholder="Enter Search Id">
+				</div>
+			</div>
+			<div class="sales-tracker">
+				<h2>Monthly Sales Tracker</h2>
+				<progress value="50" max="100" class="progress-bar"></progress>
+			</div>
+		</div>
+		<div class="metrics">
+			<div class="metric">
+				<img src="../Resources/Images/metric-icon.png" width="65px" height="65px">
+				<div class="metric-content">
+					<h4>Total Revenue</h4>
+					<h3>$1024</h3>
+				</div>
+			</div>
+			<div class="metric">
+				<img src="../Resources/Images/metric-icon.png" width="65px" height="65px">
+				<div class="metric-content">
+					<h4>No. of items sold</h4>
+					<h3>250</h3>
+				</div>
+			</div>
+			<div class="metric">
+				<img src="../Resources/Images/metric-icon.png" width="65px" height="65px">
+				<div class="metric-content">
+					<h4>Invoices Generated</h4>
+					<h3>100</h3>
+				</div>
+			</div>
+		</div>
+		<table class="records" border="1">
+			<tr>
+				<th class="heading" width="130px">Date</th>
+				<th class="heading" width="130px">Sale ID</th>
+				<th class="heading" width="180px">Customer Name</th>
+				<th class="heading" width="150px">Items Sold</th>
+				<th class="heading" width="130px">Bill Amount</th>
+				<th class="heading" width="120px">Is Online Sale</th>
+				<th class="heading" width="150px">Billed by</th>
+			</tr>
+			<tr class="record">
+				<td>03-Mar-22</td>
+				<td>SE1001</td>
+				<td>Kavish</td>
+				<td>1001, 1002</td>
+				<td>2000</td>
+				<td>No</td>
+				<td>Rajesh</td>
+			</tr>
+			<tr class="record">
+				<td>03-Mar-22</td>
+				<td>SE1001</td>
+				<td>Kavish</td>
+				<td>1001, 1002</td>
+				<td>2000</td>
+				<td>No</td>
+				<td>Rajesh</td>
+			</tr>
+		</table>
+	</div>
+	<div class="footer">
+		<img src="../Resources/Images/Footer.png" height="45px" width="140px">
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

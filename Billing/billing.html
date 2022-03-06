@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Billing | EzzzMart</title>
+	<link rel="stylesheet" type="text/css" href="../Resources/Styles/HeaderStyles.css">
+	<link rel="stylesheet" type="text/css" href="../Resources/Styles/TableStyles.css">
+	<link rel="stylesheet" type="text/css" href="../Resources/Styles/FooterStyles.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="header">
+		<div class="company-name">
+			<img src="../Resources/Images/defaultLogo.png" alt="" width="70px" height="70px">
+			<h2>Company Name</h2>
+		</div>
+		<div class="title">
+			<h1>Billing</h1>
+		</div>
+		<div class="right-section">
+			<div class="username">
+				<img src="../Resources/Images/accountCircle.png" alt="" width="56px" height="50px">
+				<h3>Username</h3>
+			</div>
+			<div class="menu">
+				<a href="#"><img src="../Resources/Images/dropdown.png" alt="" width="45px" height="30px"></a>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="basic-details">
+			<div class="input-labels">
+				<label>Date</label>
+				<label>Customer Name</label>
+				<label>Sale Id</label>
+			</div>
+			<div class="input-fields">
+				<input type="date" name="date">
+				<input type="text" name="name">
+				<input type="text" name="saleId">
+			</div>
+		</div>
+		<table class="records" border="1">
+			<tr>
+				<th class="heading" width="130px">Item Id</th>
+				<th class="heading" width="370px">Item Name</th>
+				<th class="heading" width="130px">Tax Code</th>
+				<th class="heading" width="130px">Price/Pc</th>
+				<th class="heading" width="130px">Quantity</th>
+				<th class="heading" width="120px">Gst Amount</th>
+				<th class="heading" width="130px">Total Amount</th>
+			</tr>
+			<tr class="record">
+				<td>1001</td>
+				<td>Fogg Men's Perfume 250 ml</td>
+				<td>AB1001</td>
+				<td>450</td>
+				<td>2</td>
+				<td>80</td>
+				<td>980</td>
+			</tr>
+			<tr class="record">
+				<td>1001</td>
+				<td>Fogg Men's Perfume 250 ml</td>
+				<td>AB1001</td>
+				<td>450</td>
+				<td>2</td>
+				<td>80</td>
+				<td>980</td>
+			</tr>
+			<tr class="new-item">
+				<td rowspan="1"><button class="new-item-button">+ New Item</button></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		<div class="balances">
+			<table class="balance-table" border="1">
+				<tr>
+					<td class="heading">Total Bill Amount</td>
+					<td class="content"></td>
+				</tr>
+				<tr>
+					<td class="heading">Amount Paid</td>
+					<td class="content"></td>
+				</tr>
+				<tr>
+					<td class="heading">Balance</td>
+					<td class="content"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="generate-bill">
+			<button class="new-item-button generate-bill-button">Generate Bill</button>
+		</div>
+	</div>
+	<div class="footer">
+		<img src="../Resources/Images/Footer.png" height="45px" width="140px">
+	</div>
+</body>
+</html>

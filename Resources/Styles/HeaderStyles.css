@@ -1,0 +1,44 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 90px;
+	background-color: #FBA92C;
+	font-family: 'Roboto Slab', serif;
+}
+
+.company-name {
+	display: flex;
+	align-items: center;
+	margin-left: 58px;
+}
+
+.company-name h2 {
+	align-self: center;
+	margin-left: 20px;
+}
+
+.title {
+	align-self: center;
+	font-size: 22px;
+}
+
+.username {
+	display: flex;
+	align-items: center;
+}
+
+.username h3 {
+	margin-left: 20px;
+	margin-right: 80px;
+}
+
+.menu {
+	margin-right: 60px;
+}
+
+.right-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
