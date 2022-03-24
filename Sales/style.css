@@ -52,7 +52,7 @@ body {
 	font-size: 20px;
 }
 
-.date {
+#startDate, #endDate {
 	border: none;
 	height: 30px;
 	background-color: #E6E6E6;
@@ -72,7 +72,7 @@ body {
 	font-size: 20px;
 }
 
-.search-box .search {
+.search-box #search {
 	height: 30px;
 	width: 500px;
 	margin-top: 20px;
@@ -129,6 +129,10 @@ body {
 	margin: 15px 0px;
 }
 
-.progress-bar {
-	
+#progress-bar {
+	width: 14em!important;
+}
+
+#sales-details {
+	display: none;
 }

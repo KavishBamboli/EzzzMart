@@ -39,77 +39,79 @@
 				<div class="date-input">
 					<div class="date-picker">
 						<h3>Start Date</h3>
-						<input type="date" class="date" value="">
+						<input type="date" id="startDate" value="">
 					</div>
 					<h2>To</h2>
 					<div class="date-picker">
 						<h3>End Date</h3>
-						<input type="date" class="date" value="">
+						<input type="date" id="endDate" value="">
 					</div>
 				</div>
-				<button class="go-btn"><img src="../Resources/Images/Go.png" width="35px" height="35px"></button>
+				<button class="go-btn" onclick="executeSearch()"><img src="../Resources/Images/Go.png" width="35px" height="35px"></button>
 				<div class="search-box">
 					<h2>Or</h2>
-					<input type="text" class="search" name="searchId" placeholder="Enter Search Id">
+					<input type="text" id="search" name="searchId" placeholder="Enter Search Id">
 				</div>
 			</div>
 			<div class="sales-tracker">
 				<h2>Monthly Sales Tracker</h2>
-				<progress value="50" max="100" class="progress-bar"></progress>
+				<progress value="50" max="100" id="progress-bar"></progress>
 			</div>
 		</div>
-		<div class="metrics">
-			<div class="metric">
-				<img src="../Resources/Images/metric-icon.png" width="65px" height="65px">
-				<div class="metric-content">
-					<h4>Total Revenue</h4>
-					<h3>$1024</h3>
+		<div id="sales-details">
+			<div class="metrics">
+				<div class="metric">
+					<img src="../Resources/Images/metric-icon.png" width="65px" height="65px">
+					<div class="metric-content">
+						<h4>Total Revenue</h4>
+						<h3>$1024</h3>
+					</div>
+				</div>
+				<div class="metric">
+					<img src="../Resources/Images/metric-icon.png" width="65px" height="65px">
+					<div class="metric-content">
+						<h4>No. of items sold</h4>
+						<h3>250</h3>
+					</div>
+				</div>
+				<div class="metric">
+					<img src="../Resources/Images/metric-icon.png" width="65px" height="65px">
+					<div class="metric-content">
+						<h4>Invoices Generated</h4>
+						<h3>100</h3>
+					</div>
 				</div>
 			</div>
-			<div class="metric">
-				<img src="../Resources/Images/metric-icon.png" width="65px" height="65px">
-				<div class="metric-content">
-					<h4>No. of items sold</h4>
-					<h3>250</h3>
-				</div>
-			</div>
-			<div class="metric">
-				<img src="../Resources/Images/metric-icon.png" width="65px" height="65px">
-				<div class="metric-content">
-					<h4>Invoices Generated</h4>
-					<h3>100</h3>
-				</div>
-			</div>
+			<table class="records" border="1">
+				<tr>
+					<th class="heading" width="130px">Date</th>
+					<th class="heading" width="130px">Sale ID</th>
+					<th class="heading" width="180px">Customer Name</th>
+					<th class="heading" width="150px">Items Sold</th>
+					<th class="heading" width="130px">Bill Amount</th>
+					<th class="heading" width="120px">Is Online Sale</th>
+					<th class="heading" width="150px">Billed by</th>
+				</tr>
+				<tr class="record">
+					<td>03-Mar-22</td>
+					<td>SE1001</td>
+					<td>Kavish</td>
+					<td>1001, 1002</td>
+					<td>2000</td>
+					<td>No</td>
+					<td>Rajesh</td>
+				</tr>
+				<tr class="record">
+					<td>03-Mar-22</td>
+					<td>SE1001</td>
+					<td>Kavish</td>
+					<td>1001, 1002</td>
+					<td>2000</td>
+					<td>No</td>
+					<td>Rajesh</td>
+				</tr>
+			</table>
 		</div>
-		<table class="records" border="1">
-			<tr>
-				<th class="heading" width="130px">Date</th>
-				<th class="heading" width="130px">Sale ID</th>
-				<th class="heading" width="180px">Customer Name</th>
-				<th class="heading" width="150px">Items Sold</th>
-				<th class="heading" width="130px">Bill Amount</th>
-				<th class="heading" width="120px">Is Online Sale</th>
-				<th class="heading" width="150px">Billed by</th>
-			</tr>
-			<tr class="record">
-				<td>03-Mar-22</td>
-				<td>SE1001</td>
-				<td>Kavish</td>
-				<td>1001, 1002</td>
-				<td>2000</td>
-				<td>No</td>
-				<td>Rajesh</td>
-			</tr>
-			<tr class="record">
-				<td>03-Mar-22</td>
-				<td>SE1001</td>
-				<td>Kavish</td>
-				<td>1001, 1002</td>
-				<td>2000</td>
-				<td>No</td>
-				<td>Rajesh</td>
-			</tr>
-		</table>
 	</div>
 	<div class="footer">
 		<img src="../Resources/Images/Footer.png" height="45px" width="140px">
