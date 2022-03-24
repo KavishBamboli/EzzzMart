@@ -6,11 +6,11 @@
 	if($mysqli->connect_error) {
 		exit('Could not connect');
 	}
-	
+
 	$sql = "SELECT SaleId, Date, Customer_Name, BillAmount, OnlineSale, BilledBy
 			FROM sales WHERE Date between ? and ?";
 
-	$stmt = $mysqli->prepare($sql2);
+	$stmt = $mysqli->prepare($sql);
 	$stmt->bind_param("ss", $_GET['startDate'], $_GET['endDate']);
 	$stmt->execute();
 	$stmt->store_result();
