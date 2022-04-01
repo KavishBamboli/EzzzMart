@@ -26,8 +26,6 @@ function executeSearch() {
 			// Call php file to get data
 			const xhttp = new XMLHttpRequest();
 			xhttp.onload = function() {
-				// var str = this.responseText.split("");
-				// console.log(Array.from(str));
 				var responseObj = JSON.parse(this.responseText);
 				console.log(responseObj);
 			}
