@@ -26,9 +26,12 @@ function executeSearch() {
 			// Call php file to get data
 			const xhttp = new XMLHttpRequest();
 			xhttp.onload = function() {
+				// var str = this.responseText.split("");
+				// console.log(Array.from(str));
 				var responseObj = JSON.parse(this.responseText);
+				console.log(responseObj);
 			}
-			xhttp.open("GET", "http://localhost/EzzzMart/ServerFiles/GetSalesData.php?searchType=date&startDate="+startDate.value+"&endDate="+endDate.value+"");
+			xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetSalesData.php?searchType=date&startDate="+startDate.value+"&endDate="+endDate.value+"");
 			xhttp.send();
 			salesDetails.style.display = "block";
 		}
