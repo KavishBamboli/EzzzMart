@@ -1,12 +1,11 @@
 <?php
 	header('Access-Control-Allow-Origin: *');
-	$arr = array();
 	$mysqli = new mysqli("localhost", "root", "kavish1234", "ezzzmart");
 	if($mysqli->connect_error) {
 		exit('Could not connect');
 	}
 
-	$sql = "SELECT * FROM sales where Date between '" . $_GET['startDate'] . "' and '" . $_GET['endDate'] . "'";
+	$sql = "SELECT * FROM sales where SaleId = " . $_GET['saleId'];
 
 	$result = $mysqli->query($sql);
 	if ($result->num_rows > 0) {
@@ -19,13 +18,11 @@
 	  	$sale->isOnlineSale = $row["OnlineSale"];
 	  	$sale->salesChannel = $row["SalesChannel"];
 	  	$sale->billedBy = $row["BilledBy"];
-	  	array_push($arr, $sale);
+	  	echo json_encode($sale);
 	  }
-	} 
-	if(count($arr) == 0)
-		echo "0 results";
-	else
-		echo json_encode($arr);
+	} else {
+	  echo "0 results";
+	}
 	class Sales
 	{
 		public $saleId;

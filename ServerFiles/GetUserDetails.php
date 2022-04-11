@@ -6,17 +6,12 @@
 		exit('Could not connect');
 	}
 
-	$sql = "SELECT Username FROM users WHERE UserId = ?";
+	$sql = "SELECT Username FROM users WHERE UserId = " . $_GET['userId'];
 
-	$stmt = $mysqli->prepare($sql);
-	$stmt->bind_param("i", $_GET['userId']);
-	$stmt->execute();
-	$stmt->store_result();
-	$stmt->bind_result($username);
-	$stmt->fetch();
-	$stmt->close();
+	$result = $mysqli->query($sql);
+	$row = $result->fetch_assoc();
 
-	$arr = array('UserName' => $username);
+	$arr = array('UserName' => $row["Username"]);
 
 	echo json_encode($arr); 
 ?>
