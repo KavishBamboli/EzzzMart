@@ -12,7 +12,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="populateHeader()">
 	<div class="header">
 		<div class="company-name">
 			<img src="../Resources/Images/defaultLogo.png" alt="" width="70px" height="70px">
@@ -41,7 +41,7 @@
 			<div class="input-fields">
 				<input type="date" name="date">
 				<input type="text" name="name">
-				<input type="text" name="saleId">
+				<input type="text" name="saleId" disabled>
 			</div>
 		</div>
 		<table class="records" border="1">
@@ -54,24 +54,6 @@
 				<th class="heading" width="120px">Gst Amount</th>
 				<th class="heading" width="130px">Total Amount</th>
 			</tr>
-			<tr class="record">
-				<td>1001</td>
-				<td>Fogg Men's Perfume 250 ml</td>
-				<td>AB1001</td>
-				<td>450</td>
-				<td>2</td>
-				<td>80</td>
-				<td>980</td>
-			</tr>
-			<tr class="record">
-				<td>1001</td>
-				<td>Fogg Men's Perfume 250 ml</td>
-				<td>AB1001</td>
-				<td>450</td>
-				<td>2</td>
-				<td>80</td>
-				<td>980</td>
-			</tr>
 			<tr class="new-item">
 				<td rowspan="1"><button class="new-item-button">+ New Item</button></td>
 				<td></td>
@@ -82,6 +64,16 @@
 				<td></td>
 			</tr>
 		</table>
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<h3>Enter Item Id:</h3>
+				<input type="text" class="inputText"><br><br>
+				<h3>Enter Quantity:</h3>
+				<input type="number" class="inputText"><br><br>
+				<button class="new-item-button" onclick="getItemData()">Enter Item</button>
+			</div>
+		</div>
 		<div class="balances">
 			<table class="balance-table" border="1">
 				<tr>
@@ -90,7 +82,7 @@
 				</tr>
 				<tr>
 					<td class="heading">Amount Paid</td>
-					<td class="content"></td>
+					<td class="content"><input type="text" id="amountPaid"></td>
 				</tr>
 				<tr>
 					<td class="heading">Balance</td>
@@ -99,11 +91,12 @@
 			</table>
 		</div>
 		<div class="generate-bill">
-			<button class="new-item-button generate-bill-button">Generate Bill</button>
+			<button class="new-item-button generate-bill-button" onclick="generateBill()">Generate Bill</button>
 		</div>
 	</div>
 	<div class="footer">
 		<img src="../Resources/Images/Footer.png" height="45px" width="140px">
 	</div>
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

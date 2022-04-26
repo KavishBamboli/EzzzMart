@@ -9,6 +9,11 @@ endDate.value = today.toISOString().substr(0, 10);
 
 function executeSearch() {
 	var responseObj;
+	var table = document.getElementsByClassName("records")[0];
+	for(var i = 1; i < table.children[0].childElementCount; i++)
+	{
+		table.children[0].removeChild(table.children[0].children[i]);
+	}
 	if(searchSaleId.value == '')
 	{
 		if(endDate.value > today.toISOString().substr(0, 10))
@@ -34,8 +39,10 @@ function executeSearch() {
 				else
 				{
 					responseObj = JSON.parse(this.responseText);
-					displayDetails(responseObj);
+					for(var i = 0; i < responseObj.length; i++)
+						displayDetails(responseObj[i]);
 					calculateMetrics(responseObj);
+					salesDetails.style.display = "block";
 				}
 			}
 			xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetSalesData.php?searchType=date&startDate="+startDate.value+"&endDate="+endDate.value+"");
@@ -54,31 +61,17 @@ function executeSearch() {
 			{
 				responseObj = JSON.parse(this.responseText);
 				displayDetails(responseObj);
+				salesDetails.style.display = "block";
+				var metrics = document.getElementsByClassName("metric");
+				metrics[0].style.display = "none";
+				metrics[1].style.display = "none";
+				metrics[2].style.display = "none";
 			}
 		}
 		xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetSalesDataUsingId.php?searchType=date&saleId="+searchSaleId.value+"");
 		xhttp.send();
 	}
 	
-}
-
-function getSalesTarget() {
-	// Get Sales target from database
-}
-
-function updateProgressBar() {
-	var totalMonthlySales = 0;
-	var salesTarget = getSalesTarget();
-	var month = today.getMonth() + 1;
-	console.log(month);
-
-	var salesData = null; // get data from database;
-	for (var i = 0; i < salesData.length; i++) {
-		totalMonthlySales += salesData[i]['SalesAmount'];
-	}
-
-	var progressBar = document.getElementById('progress-bar')
-	progressBar.value = totalMonthlySales / salesTarget * 100;
 }
 
 function calculateMetrics(responseObj) {
@@ -89,41 +82,40 @@ function calculateMetrics(responseObj) {
 		totalInvoices += 1;
 	}
 	metrics[0].children[1].innerHTML = "Rs. " + totalRevenue;
+	metrics[1].children[1].innerHTML = Math.round((totalRevenue/totalInvoices) * 100) / 100;
 	metrics[2].children[1].innerHTML = totalInvoices;
 }
 
-function displayDetails(responseObj) {	
+function displayDetails(saleDetail)
+{
 	var table = document.getElementsByClassName("records")[0].children[0];
-	for (var i = 0; i < responseObj.length; i++) {
-		var row = document.createElement("tr");
-		row.classList.add("record");
-		var date = document.createElement("td");
-		date.innerHTML = responseObj[i].date;
-		row.appendChild(date);
-		var saleId = document.createElement("td");
-		saleId.innerHTML = responseObj[i].saleId;
-		row.appendChild(saleId);
-		var customerName = document.createElement("td");
-		customerName.innerHTML = responseObj[i].customerName;
-		row.appendChild(customerName);
-		var itemsSold = document.createElement("td");
-		fetchSalesItems(itemsSold, responseObj[i].saleId);
-		row.appendChild(itemsSold);
-		var billAmt = document.createElement("td");
-		billAmt.innerHTML = responseObj[i].billAmt;
-		row.appendChild(billAmt);
-		var isOnlineSale = document.createElement("td");
-		isOnlineSale.innerHTML = responseObj[i].isOnlineSale;
-		row.appendChild(isOnlineSale);
-		var salesChannel = document.createElement("td");
-		salesChannel.innerHTML = responseObj[i].salesChannel;
-		row.appendChild(salesChannel);
-		var billedBy = document.createElement("td");
-		billedBy.innerHTML = responseObj[i].billedBy;
-		row.appendChild(billedBy);
-		table.appendChild(row);
-	}
-	salesDetails.style.display = "block";
+	var row = document.createElement("tr");
+	row.classList.add("record");
+	var date = document.createElement("td");
+	date.innerHTML = saleDetail.date;
+	row.appendChild(date);
+	var saleId = document.createElement("td");
+	saleId.innerHTML = saleDetail.saleId;
+	row.appendChild(saleId);
+	var customerName = document.createElement("td");
+	customerName.innerHTML = saleDetail.customerName;
+	row.appendChild(customerName);
+	var itemsSold = document.createElement("td");
+	fetchSalesItems(itemsSold, saleDetail.saleId);
+	row.appendChild(itemsSold);
+	var billAmt = document.createElement("td");
+	billAmt.innerHTML = saleDetail.billAmt;
+	row.appendChild(billAmt);
+	var isOnlineSale = document.createElement("td");
+	isOnlineSale.innerHTML = saleDetail.isOnlineSale;
+	row.appendChild(isOnlineSale);
+	var salesChannel = document.createElement("td");
+	salesChannel.innerHTML = saleDetail.salesChannel;
+	row.appendChild(salesChannel);
+	var billedBy = document.createElement("td");
+	billedBy.innerHTML = saleDetail.billedBy;
+	row.appendChild(billedBy);
+	table.appendChild(row);
 }
 
 function populateHeader() {
