@@ -1,0 +1,302 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, intial-scale=1.0">
+<title>Reviews</title>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="../Resources/Styles/HeaderStyles.css"/>
+<link rel="shortcut icon" href="images/fav-icon.png"/>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+<style>*{
+    margin: 0px;
+    padding: 0px;
+    font-family: poppins;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+#reviews{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+}
+.review-heading{
+    letter-spacing: 1px;
+    margin: 30px 0px;
+    padding: 10px 20px;
+    display:block;
+    text-align:left;
+}
+.review-heading h1{
+    font-size: 2.2rem;
+    font-weight: 500;
+    background-color: #202020;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+.review-heading span{
+    font-size: 1.3rem;
+    color: #252525;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.review-box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:100%;
+}
+.review-box{
+    width:500px;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 15px;
+    cursor: pointer;
+}
+.profile-img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.profile-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.profile{
+    display: flex;
+    align-items: center;
+}
+.name-user{
+    display: flex;
+    flex-direction: column;
+}
+.name-user strong{
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+.name-user span{
+    color: #979797;
+    font-size: 0.8rem;
+}
+.reviews{
+    color: #f9d71c;
+}
+.box-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.client-comment p{
+    font-size: 0.9rem;
+    color: #4b4b4b;
+}
+.review-box:hover{
+    transform: translateY(-10px);
+    transition: all ease 0.3s;
+}
+ 
+@media(max-width:1060px){
+    .review-box{
+        width:45%;
+        padding: 10px;
+    }
+}
+@media(max-width:790px){
+    .review-box{
+        width:100%;
+    }
+    .review-heading h1{
+        font-size: 1.4rem;
+    }
+}
+@media(max-width:340px){
+    .box-top{
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+    .reviews{
+        margin-top: 10px;
+    }
+}
+::selection{
+    color: #ffffff;
+    background-color: #252525;
+}
+
+#navigation{
+    background-color:#FBA92C;
+    height:80px;
+    width:100%;
+    padding:10px;
+    margin:10px;
+    left:0;
+    display:block;
+    text-align:center;
+}
+
+button{
+    right:0;
+    background-color:#FBA92C;
+    color:white;
+    font-weight: bold;
+    padding:5px;
+    border:none;
+    border-radius:3%;
+}
+
+.submit{
+    font-size: 0.9rem;
+    color: #4b4b4b;
+    display:flex;
+    flex-direction:row;
+    justify-items:center;
+    align-items:center;
+}
+ </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">
+            <img src="../Resources/Images/defaultLogo.png" alt="" width="70px" height="70px">
+            <h2>Company Name</h2>
+        </div>
+        <div class="title">
+            <h1>Customer Reviews</h1>
+        </div>
+        <div class="right-section">
+            <div class="username">
+                <img src="../Resources/Images/accountCircle.png" alt="" width="56px" height="50px">
+                <h3>Username</h3>
+            </div>
+            <div class="menu">
+                <a href="#"><img src="../Resources/Images/dropdown.png" alt="" width="45px" height="30px"></a>
+            </div>
+        </div>
+    </div>
+    <section id="reviews">
+        <div id="review-heading">
+            <br><h2>Feedback</h2>
+        </div>
+        <div class="review-box-container">
+            <!--BOX-1-------------->
+            <div class="review-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="../Resources/Images/profileImage.png">
+                        </div>
+                        <div class="name-user">
+                            <strong>Touseeq Ijaz</strong>
+                            <span>@touseeqijazweb</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>--</p>
+                </div><br>
+
+            </div>
+            <!--BOX-2-------------->
+            <div class="review-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="../Resources/Images/profileImage.png" />
+                        </div>
+                        <div class="name-user">
+                            <strong>J.K Rowling</strong>
+                            <span>@jkrowling</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>--</p>
+                </div><br>
+
+            </div>
+
+    </section>     
+    <section id="reviews">
+        <div id="review-heading">
+            <br><h2>Complain</h2>
+        </div>   
+        <div class="review-box-container">
+            <!--BOX-3-------------->
+            <div class="review-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="../Resources/Images/profileImage.png" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Harry Potter</strong>
+                            <span>@DanielRedclief</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>--</p>
+                </div><br>
+
+                <div class="submit">
+                    <p>Current Status:Under Review</p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <button type="submit" value="Take Action">Change Status</button>
+                </div>
+            </div>
+            <!--BOX-4-------------->
+            <div class="review-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="../Resources/Images/profileImage.png" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Ambika</strong>
+                            <span>@ambikayy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>--</p>
+                </div><br>
+
+                <div class="submit">
+                    <p>Current Status:Action Taken</p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <button type="submit" value="Take Action">Change Status</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
+  
+  

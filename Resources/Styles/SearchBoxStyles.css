@@ -1,0 +1,70 @@
+.date-input {
+	display: flex;
+	justify-content: space-between;
+	width: 600px;
+}
+
+.date-input h2 {
+	color: #575757;
+	font-size: 20px;
+}
+
+.date-picker {
+	width: 170px;
+	height: 70px;
+	padding: 10px;
+	background-color: #E6E6E6;
+	border-bottom: 3px solid black;
+}
+
+.date-picker h3 {
+	margin-top: 0px;
+	color: #575757;
+	margin-bottom: 13px;
+	font-size: 20px;
+}
+
+#startDate, #endDate {
+	border: none;
+	height: 30px;
+	background-color: #E6E6E6;
+	font-family: 'Roboto Slab', serif;
+	font-size: 17px;
+}
+
+.search-box {
+	width: 600px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.search-box h2 {
+	color: #575757;
+	margin-top: 25px;
+	font-size: 20px;
+}
+
+.search-box #search {
+	height: 30px;
+	width: 500px;
+	margin-top: 20px;
+	font-size: 15px;
+	padding-left: 8px;
+	border: none;
+	background-color: #E6E6E6;
+	color: #575757;
+}
+
+.go-btn {
+	position: absolute;
+	border: none;
+	padding: 6px;
+	width: 47px;
+	height: 47px;
+	left: 700px;
+	top: 250px;
+}
+
+.go-btn:hover {
+	background-color: #565656;
+}

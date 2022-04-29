@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Employee Details</title>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" type="text/css" href="EmployeePageStyles.css">
+        <link rel="stylesheet" type="text/css" href="../Resources/Styles/HeaderStyles.css">
+        <link rel="stylesheet" type="text/css" href="../Resources/Styles/SearchBoxStyles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab&display=swap" rel="stylesheet">
+    </head>
+    <body id="img">
+        <div class="header">
+            <div class="company-name">
+                <img src="../Resources/Images/defaultLogo.png" alt="" width="70px" height="70px">
+                <h2>Company Name</h2>
+            </div>
+            <div class="title">
+                <h1>Employee</h1>
+            </div>
+            <div class="right-section">
+                <div class="username">
+                    <img src="../Resources/Images/accountCircle.png" alt="" width="56px" height="50px">
+                    <h3>Username</h3>
+                </div>
+                <div class="menu">
+                    <a href="#"><img src="../Resources/Images/dropdown.png" alt="" width="45px" height="30px"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="search">
+            <button onclick="getAllEmployees()">View all current employees</button>
+            <h2>Enter employee id to search</h2>
+            <div class="search-box">
+                <input type="text" id="search" name="searchId" placeholder="Enter Employee Id">
+            </div>
+            <button class="go-btn" onclick="getEmployeeById()"><img src="../Resources/Images/Go.png" width="35px" height="35px"></button>
+        </div>
+        <nav>
+            <div id="cashiers">
+                <label for="btn" class="button">Cashiers
+                    <span class="fas fa-caret-down"></span>
+                </label>
+                <input type="checkbox" id="btn">
+                <ul class="empMenu">
+                    <li class="employeeRecord">
+                        <label for="btn-2" class="first">Sample<span class="fas fa-caret-down"></span></label>
+                        <input type="checkbox" id="btn-2">
+                        <ul>
+                            <li><a href="#">Employee Id: </a></li>
+                            <li><a href="#">Address Line 1:</a></li>
+                            <li><a href="#">Address Line 2: </a></li>
+                            <li><a href="#">Account No: </a></li>
+                            <li><a href="#">Salary: </a></li>
+                            <li><a href="#">Contact No: </a></li>
+                        </ul>
+                    </li>
+                    <!--                 
+                    <li>
+                        <label for="btn-3" class="second">Bapu Samue
+                        <span class="fas fa-caret-down"></span></label>
+                        <input type="checkbox" id="btn-3">
+                        <ul>
+                            <li><a href="#">Number:</a></li>
+                            <li><a href="#">Email:</a></li>
+                            <li><a href="#">Employment Period:</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+            <br>
+
+            <div id="managers">
+                <label for="btm" class="button">Managers
+                    <span class="fas fa-caret-down"></span>
+                </label>
+                <input type="checkbox" id="btm">
+                <ul class="menu">
+                    <li class="employeeRecord">
+                        <label for="btm-2" class="first">Rohan Samuel
+                        <span class="fas fa-caret-down"></span></label>
+                        <input type="checkbox" id="btm-2">
+                        <ul>
+                            <li><a href="#">Number:</a></li>
+                            <li><a href="#">Email:</a></li>
+                            <li><a href="#">Employment Period:</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- <li>
+                        <label for="btm-3" class="second">Bapu Samue
+                        <span class="fas fa-caret-down"></span></label>
+                        <input type="checkbox" id="btm-3">
+                        <ul>
+                            <li><a href="#">Number:</a></li>
+                            <li><a href="#">Email:</a></li>
+                            <li><a href="#">Employment Period:</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+                <br>
+
+            <div id="part-time">
+                <label for="bto" class="button">Part-Time Workers
+                    <span class="fas fa-caret-down"></span>
+                </label>
+                <input type="checkbox" id="bto">
+                <ul class="menu">
+                    <li class="employeeRecord">
+                        <label for="bto-2" class="first">Randy Samuel
+                        <span class="fas fa-caret-down"></span></label>
+                        <input type="checkbox" id="bto-2">
+                        <ul>
+                            <li><a href="#">Number:</a></li>
+                            <li><a href="#">Email:</a></li>
+                            <li><a href="#">Employment Period:</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- <li>
+                        <label for="bto-3" class="second">Bapu Samue
+                        <span class="fas fa-caret-down"></span></label>
+                        <input type="checkbox" id="bto-3">
+                        <ul>
+                            <li><a href="#">Number:</a></li>
+                            <li><a href="#">Email:</a></li>
+                            <li><a href="#">Employment Period:</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+    </html>

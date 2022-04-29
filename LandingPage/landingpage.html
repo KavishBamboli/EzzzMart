@@ -1,0 +1,234 @@
+<html>
+    <head>
+        <title>Landing Page</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab&display=swap" rel="stylesheet">
+        <style>
+
+            :root 
+            {
+            --primary-color:linear-gradient(#FBA92C 42.19%, #575757 100%);;
+            --container-background-color: #ffffff;
+            --text-color: #ffffff;
+            --body-color: #f6f5f7;
+            }
+
+            body{
+                position: relative;
+                background: linear-gradient(270deg, #FFFFFF 1.16%, #FBA92C 58.82%, #F49503 100%);
+                background:cover;
+                background-repeat: no-repeat;
+            }
+
+            #logo{
+                max-width:100%;
+                max-height:100%;
+                position:fixed;
+                top:-15px;
+                left:4px;
+            }
+
+            #block{
+                position: absolute;
+                width: 780px;
+                height:635px;
+                left: 731.5px;
+                top: 70px;
+                background: linear-gradient(269.36deg, #FBA92C 8.48%, #FEE1B5 67.26%);
+                border-radius: 114px 0 0 114px;
+                display:block;
+                text-align:right;
+            }
+
+            .dropdown{
+                margin:0 auto;
+            }
+
+            nav{
+               height:50px;
+            }
+
+            .notif{
+                background-color:white;
+                border-radius:25px 0 0 25px;
+                width:80%;
+                height:80px;
+                position: fixed;
+                right:0;
+                bottom:50px;
+                text-align: center;
+            }
+
+            #user{
+                max-width:100%;
+                max-height:100%;
+                position:absolute;
+                top:-10px;
+                right:-2px;
+                padding:15px;
+            }
+
+            #user>a{
+               display:block;
+               padding:0;
+               color:white;
+               text-decoration:none;
+               line-height:60px;
+               font-size:20px;
+            }
+
+            #user>a:hover{
+                opacity:0.4;
+            }
+
+            #search{
+                max-width:100%;
+                max-height:100%;
+                position:absolute;
+                top:-10px;
+                right:20px;
+                padding:15px 50px;
+            }
+
+            .scroll{
+                position:absolute;
+                right:0;
+                bottom:-10px;
+            }
+
+            .image-scroll{
+                position:absolute;
+                left:0;
+            }
+
+            #text{
+                display:absolute;
+                left:0;
+                padding:100px 60px;
+                color:white;
+                line-height:4px;
+                top:-20px;
+            }
+
+            button{
+                margin:2px 4px;
+                border-radius: 20px;
+                border: 2px solid white;
+                background-color:transparent;
+                color: #ffffff;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 12px 45px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                transition: transform 80ms ease-in;
+                cursor: pointer;
+            }
+
+            .smalltext{
+                font-size:24px;
+            }
+
+            .largetext{
+                font-size:100px;
+            }
+
+            nav{
+                height:100hv;
+                width:70vw;
+                min-width:600px;
+                display:flex;
+                align-items:center;
+                justify-content:space-around;
+                margin:auto;
+            }
+
+            nav  a{
+                position:relative;
+                font-family:nunito;
+                text-decoration:none;
+                color:#575757;
+                font-size:22px;
+                letter-spacing:0.5px;
+                padding:0 10px;
+                font-weight:bold;
+            }
+
+            nav a:after{
+                content:"";
+                position:absolute;
+                background-color:#575757;
+                transition:0.3s;
+                height:3px;
+                width:0;
+                left:0;
+                bottom:-10px;
+            }
+
+            nav a:hover:after{
+                width:100%;
+            }
+            
+            .about-us{
+               width:80%;
+               margin:auto;
+               text-align:center;
+               padding-top:100px; 
+            }
+
+            h1{
+                font-size:36px;
+                font-weight:600;
+            }
+
+            p{
+                color:#fff;
+                font-size:14px;
+                font-weight:300;
+                line-height: 22px;
+                padding:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="logo">
+                <a href="#"><img src="../Resources/Images/ezzmartLogo.png" alt="logo" height="100px" width="100px"></a>
+            </div>
+
+            <div id="navigation">
+                <nav>
+                        <a href="landingpage.html" class="default">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact Us</a>
+                </nav>
+            </div>
+                
+            <div id="text">
+                <br>
+                <p class="smalltext">SUPERMART</p>
+                <h1 class="largetext">EZZZMART</h1>
+                <p class="smalltext">Making your everyday business easier and quicker!</p>
+
+            <div id="button-profile">
+                <a href="profile2.html"><button class="go-profile">Go to Profile</button></a>
+            </div>
+            </div>
+
+        <div id="block">
+                <img class="scroll" src="../Resources/Images/bannerImage.png" alt="options" height="560px" width="850px">
+        </div>
+
+            <div id="user">
+                <a href="../LoginPage/LoginPage.html"><img src="../Resources/Images/profileImage.png" alt="profile" height="40px" width="45px"></a>
+            </div>
+
+            <section class="about-us">
+                <div>
+                    
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

@@ -119,15 +119,12 @@ function displayDetails(saleDetail)
 }
 
 function populateHeader() {
-	var userId = sessionStorage.getItem("userId");
-	const xhttp = new XMLHttpRequest();
-	xhttp.onload = function() {
-		var responseObj = JSON.parse(this.responseText);
-		var username = document.getElementsByClassName("username")[0].children[1];
-		username.innerHTML = responseObj.UserName;
-	}
-	xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetUserDetails.php?userId="+userId+"");
-	xhttp.send();
+	var userName = sessionStorage.getItem("userName");
+	var storeName = sessionStorage.getItem("storeName");
+	var storename = document.getElementsByClassName("company-name")[0].children[1];
+	storename.innerHTML = storeName;
+	var username = document.getElementsByClassName("username")[0].children[1];
+	username.innerHTML = userName;
 }
 
 function fetchSalesItems(itemsSold, saleId) {
