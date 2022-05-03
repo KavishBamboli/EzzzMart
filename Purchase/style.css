@@ -1,0 +1,84 @@
+body {
+    margin: 0px;
+    background-image: url("../Resources/Images/purchase-bgimage.png");
+    background-size: cover;
+    background-position: center;
+}
+
+#panel-buttons {
+    width: 800px;
+    margin-left: 50px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.panel-btn {
+    padding: 10px 15px;
+    margin: 20px;
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+    font-size: 20px;
+    border: 2px solid #000000;
+}
+
+.panel-btn:hover {
+    cursor: pointer;
+    background-color: #575757;
+    color: #ffffff;
+}
+
+#side-panel{
+    border: 2px solid #000;
+    height: 400px;
+    width: 400px;
+    border-radius: 10px; 
+    float: right;
+    margin-right: 60px;
+}
+
+#side-panel h1 {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+}
+
+#side-panel-box {
+    width: 200px;
+    height: 80px;
+    border-radius: 15px;
+    border: 1px solid #000;
+    display: block;
+    text-align: center;
+    display: flex;
+}
+
+#side-panel-box h4 {
+    margin-top: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+}
+
+table,th,td,tr{
+    padding:15px;
+    margin:10px;
+    text-align:center;
+    font-family: 'Nunito', sans-serif;
+}
+
+#supplier{
+    border-collapse: collapse;
+}
+
+.purchaseHead {
+    margin-left: 58px;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.top-section {
+    margin-left: 58px;
+}
+
+.records {
+    margin-left: 58px;
+    margin-top: 40px;
+}
