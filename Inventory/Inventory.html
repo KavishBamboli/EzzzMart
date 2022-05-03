@@ -1,0 +1,258 @@
+<DOCTYPE! html>
+<html>
+<head>
+    <title>Inventory | EzzzMart</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="HeaderStyles.css">
+	<link rel="stylesheet" type="text/css" href="TableStyles.css">
+	<link rel="stylesheet" type="text/css" href="FooterStyles.css">
+	<link rel="stylesheet" type="text/css" href="SearchBoxStyles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../Resources/Styles/SideBarStyles.css"> -->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/220800bffc.js" crossorigin="anonymous"></script>
+
+    <style>
+        button{
+            padding:10px;
+            margin:40px;
+            width: 234px;
+            height:55px;
+            display:inline-block;
+            font-family: 'Roboto Slab';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 25px;
+            line-height: 33px;
+            border:2px solid #000;
+            left:0px;
+        }
+
+        .side-panel{
+            border:2px solid #000;
+            height:300px;
+            width:320px;
+            border-radius:3px; 
+            float:right;
+            right:50px;
+            margin-right:60px;
+        }
+
+        .side-panel-alignment h1{
+            display:block;
+            text-align:center;
+        }
+
+        .side-panel-alignment{
+            display:block;
+            text-align:center;
+        }
+
+        #side-panel-box{
+            width:300px;
+            height:150px;
+            border-radius:15px;
+            border:1px solid #000;
+            display:block;
+            text-align:center;
+        }
+
+        #right{
+            float:right;
+            border-collapse: collapse;
+            margin:0px;
+            gap:0px;
+        }
+
+        .sidey{
+            margin-top: 30px;
+        }
+
+        .data{
+            width:90%;
+            height:65%;
+        }
+
+        #search-result{
+            border:3px solid #000;
+            width:60%;
+            height:48%;
+            font-family: nunito;
+        }
+
+        #searchy{
+            border-collapse: collapse;
+            font-size:20px;
+            font-family:nunito;
+        }
+
+        a{
+            text-decoration: none;
+            color:black;
+        }
+
+        a:visited{
+            text-decoration: none;
+            color:black;
+        }
+
+        a:hover{
+            text-decoration: none;
+            color:rgb(39, 37, 37);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="company-name">
+            <img src="../Resources/Images/defaultLogo.png" alt="" width="70px" height="70px">
+            <h2>Company Name</h2>
+        </div>
+        <div class="title">
+            <h1>Employee</h1>
+        </div>
+        <div class="right-section">
+            <div class="username">
+                <img src="../Resources/Images/accountCircle.png" alt="" width="56px" height="50px">
+                <h3>Username</h3>
+            </div>
+            <div class="menu">
+                <a href="#"><img src="../Resources/Images/dropdown.png" alt="" width="45px" height="30px"></a>
+            </div>
+        </div>
+    </div>
+
+    <table id="right">
+        <tr>
+            <th>
+                <div class="side-panel sidey">
+                    <div class="side-panel-alignment">
+                        <h1>Items to Restock</h1>
+                        <center>
+                           <table class="data" border="1">
+                            <thead>
+                                <tr>
+                                    <th><strong>Item ID</strong></th>
+                                    <th><strong>Quantity in Stock</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                
+                                <tr>
+                                    <td class="boxy" colspan="2" style="height:20px;width:10px;">
+                                      <center> <a href="#"><strong>View more&nbsp; <i class="fa-solid fa-caret-down"></i></strong></a></center>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </center></div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <div class="side-panel">
+                    <div class="side-panel-alignment">
+                        <h1>Stock to be Replaced</h1>
+                        <center>
+                           <table class="data" border="1">
+                            <thead>
+                                <tr>
+                                    <th>Item Id</th>
+                                    <th>Reason</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                
+                                <tr>
+                                    <td class="boxy" colspan="2" style="height:20px;width:10px;">
+                                       <center><a href="#"><strong>View more&nbsp; <i class="fa-solid fa-caret-down"></i></strong></a></center>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </center></div>
+                </div>
+            </th>
+        </tr>
+    </table>
+
+    
+    <center>
+    <div id="button">
+        <button type="submit">+ New Stock Item</button>
+        <button type="submit">+ New Offer</button>
+    </div></center>
+
+    <div>
+        <button class="go-btn" onclick="executeSearch()" style="top:200px;"><i class="fa-solid fa-arrow-right"></i></button>
+				<div class="search-box" style="margin-left:100px;">
+					<input type="text" id="search" name="searchId" placeholder="Search for an item ID in inventory">
+				</div>
+    </div><br><br>
+
+    <div id="search-result" style="margin-left:100px;padding:30px;">
+        <center>
+            <h2><ins>Search Results</ins></h2>
+        </center>
+            <table id="searchy" >
+                <tr>
+                    <td colspan="18"><strong>Item ID</strong></td>
+                    <td colspan="18">-</td>
+                </tr>
+                <tr>
+                    <td colspan="18"><strong>Item Name</strong></td>
+                    <td colspan="18">-</td>
+                </tr>
+                <tr>
+                    <td colspan="18"><strong>Cost Price</strong></td>
+                    <td colspan="18">-</td>
+                </tr>
+                <tr>
+                    <td colspan="18"><strong>Selling Price</strong></td>
+                    <td colspan="18">-</td>
+                </tr>
+                <tr>
+                    <td colspan="18"><strong>Quantity in Stock</strong></td>
+                    <td colspan="18">-</td>
+                </tr>
+                <tr>
+                    <td colspan="18"><strong>Supplier ID</strong></td>
+                    <td colspan="18">-</td>
+                </tr>
+            </table>
+    </div>
+</body>
+</html>
