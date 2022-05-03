@@ -11,26 +11,12 @@ function getEmployeeById() {
 			else
 			{
 				var employeeData = JSON.parse(this.responseText);
-                if(employeeData.role == "Cashier")
-                {
-                    var cashierDiv = document.getElementById("cashiers");
-                    cashierDiv.style.display = "block";
-                    displayEmployeeData(employeeData);
-                }
-                else if(employeeData.role == "Manager")
-                {
-                    var managerDiv = document.getElementById("managers");
-                    managerDiv.style.display = "block";
-                    displayEmployeeData(employeeData);
-                }
-                else if(employeeData.role == "Part time")
-                {
-                    var partTimeDiv = document.getElementById("part-time");
-                    partTimeDiv.style.display = "block";
-                    displayEmployeeData(employeeData);
-                }
-                var nav = document.getElementsByTagName("nav")[0];
-                nav.style.display = "block";
+                displayEmployeeData(employeeData);
+                var searchResult = document.getElementsByClassName("search-results-box")[0];
+                searchResult.style.display = "block";
+
+                var tableWrapper = document.getElementsByClassName("table-wrapper")[0];
+                tableWrapper.style.display = "none";
 			}
 		}
 	}
@@ -38,22 +24,72 @@ function getEmployeeById() {
 	xhttp.send();
 }
 
-function displayEmployeeData(empObj) {
-    var menu = document.getElementsByClassName("empMenu")[0];
-    var lastEmployeeRecord = document.getElementsByClassName("employeeRecord")[document.getElementsByClassName.length-1];
+function getAllEmployees()
+{
+    const xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if(this.readyState == 4 && this.status == 200)
+		{
+			if(this.responseText == "0 results")
+			{
+				alert("No results found!");
+			}
+			else
+			{
+				var employeesData = JSON.parse(this.responseText);
+                for (let index = 0; index < employeesData.length; index++) {
+                    displayEmployeeRecord(employeesData[index]);
+                }
+                var tableWrapper = document.getElementsByClassName("table-wrapper")[0];
+                tableWrapper.style.display = "block";
+                
+                var searchResult = document.getElementsByClassName("search-results-box")[0];
+                searchResult.style.display = "none";
+			}
+		}
+	}
+	xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetAllEmployeeDetails.php?");
+	xhttp.send();
+}
 
-    var newEmployee = lastEmployeeRecord.cloneNode(lastEmployeeRecord);
-    newEmployee.children[0].innerHTML = empObj.employeeName + "<span class='fas fa-caret-down'></span>";
-    newEmployee.children[0].setAttribute("for", "btn-" + (menu.children.length + 2));
-    newEmployee.children[1].setAttribute("id", "btn-" + (menu.children.length + 2));
-    newEmployee.children[2].children[0].children[0].innerHTML += empObj.employeeId;
-    newEmployee.children[2].children[1].children[0].innerHTML += empObj.addressLine1;
-    newEmployee.children[2].children[2].children[0].innerHTML += empObj.addressLine2;
-    newEmployee.children[2].children[3].children[0].innerHTML += empObj.accNo;
-    newEmployee.children[2].children[4].children[0].innerHTML += empObj.salary;
-    newEmployee.children[2].children[5].children[0].innerHTML += empObj.contactNo;
-    menu.children[0].style.display = "none";
-    menu.appendChild(newEmployee);
+function displayEmployeeRecord(empObj)
+{
+    var table = document.getElementsByClassName("records")[0].children[0];
+	var row = document.createElement("tr");
+	row.classList.add("record");
+	var empId = document.createElement("td");
+	empId.innerHTML = empObj.employeeId;
+	row.appendChild(empId);
+	var empName = document.createElement("td");
+	empName.innerHTML = empObj.employeeName;
+	row.appendChild(empName);
+	var addressLine1 = document.createElement("td");
+	addressLine1.innerHTML = empObj.addressLine1;
+	row.appendChild(addressLine1);
+	var addressLine2 = document.createElement("td");
+    addressLine2.innerHTML = empObj.addressLine2;
+	row.appendChild(addressLine2);
+	var accNo = document.createElement("td");
+	accNo.innerHTML = empObj.accNo;
+	row.appendChild(accNo);
+	var salary = document.createElement("td");
+	salary.innerHTML = empObj.salary;
+	row.appendChild(salary);
+	var contactNo = document.createElement("td");
+	contactNo.innerHTML = empObj.contactNo;
+	row.appendChild(contactNo);
+	var role = document.createElement("td");
+	role.innerHTML = empObj.role;
+	row.appendChild(role);
+	table.appendChild(row);
+}
+
+function displayEmployeeData(empObj) {
+    var particulars = document.getElementsByClassName("particular");
+
+    for (let index = 0; index < particulars.length; index++) {
+        particulars[index].children[1].innerHTML = Object.values(empObj)[index];
+    }
 }
 
 function populateHeader() {
