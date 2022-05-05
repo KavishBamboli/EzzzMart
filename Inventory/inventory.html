@@ -1,4 +1,4 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Inventory | EzzzMart</title>
@@ -17,93 +17,7 @@
     <script src="https://kit.fontawesome.com/220800bffc.js" crossorigin="anonymous"></script>
 
     <style>
-        button{
-            padding:10px;
-            margin:40px;
-            width: 234px;
-            height:55px;
-            display:inline-block;
-            font-family: 'Roboto Slab';
-            font-style: normal;
-            font-weight: 900;
-            font-size: 25px;
-            line-height: 33px;
-            border:2px solid #000;
-            left:0px;
-        }
-
-        .side-panel{
-            border:2px solid #000;
-            height:300px;
-            width:320px;
-            border-radius:3px; 
-            float:right;
-            right:50px;
-            margin-right:60px;
-        }
-
-        .side-panel-alignment h1{
-            display:block;
-            text-align:center;
-        }
-
-        .side-panel-alignment{
-            display:block;
-            text-align:center;
-        }
-
-        #side-panel-box{
-            width:300px;
-            height:150px;
-            border-radius:15px;
-            border:1px solid #000;
-            display:block;
-            text-align:center;
-        }
-
-        #right{
-            float:right;
-            border-collapse: collapse;
-            margin:0px;
-            gap:0px;
-        }
-
-        .sidey{
-            margin-top: 30px;
-        }
-
-        .data{
-            width:90%;
-            height:65%;
-        }
-
-        #search-result{
-            border:3px solid #000;
-            width:60%;
-            height:48%;
-            font-family: nunito;
-        }
-
-        #searchy{
-            border-collapse: collapse;
-            font-size:20px;
-            font-family:nunito;
-        }
-
-        a{
-            text-decoration: none;
-            color:black;
-        }
-
-        a:visited{
-            text-decoration: none;
-            color:black;
-        }
-
-        a:hover{
-            text-decoration: none;
-            color:rgb(39, 37, 37);
-        }
+        
     </style>
 </head>
 <body>
@@ -113,7 +27,7 @@
             <h2>Company Name</h2>
         </div>
         <div class="title">
-            <h1>Employee</h1>
+            <h1>Inventory</h1>
         </div>
         <div class="right-section">
             <div class="username">
@@ -134,13 +48,10 @@
                         <h1>Items to Restock</h1>
                         <center>
                            <table class="data" border="1">
-                            <thead>
                                 <tr>
                                     <th><strong>Item ID</strong></th>
                                     <th><strong>Quantity in Stock</strong></th>
                                 </tr>
-                            </thead>
-                            <tbody>
                                 <tr>
                                     <td></td>
                                     <td></td>
@@ -161,7 +72,6 @@
                                       <center> <a href="#"><strong>View more&nbsp; <i class="fa-solid fa-caret-down"></i></strong></a></center>
                                     </td>
                                 </tr>
-                            </tbody>
                         </table>
                     </center></div>
                 </div>
@@ -211,13 +121,13 @@
 
     
     <center>
-    <div id="button">
-        <button type="submit">+ New Stock Item</button>
-        <button type="submit">+ New Offer</button>
+    <div id="panel-buttons">
+        <button class="panel-btn">+ New Stock Item</button>
+        <button class="panel-btn">+ New Offer</button>
     </div></center>
 
     <div>
-        <button class="go-btn" onclick="executeSearch()" style="top:200px;"><i class="fa-solid fa-arrow-right"></i></button>
+        <button class="go-btn" onclick="executeSearch()" style="top:235px;"><i class="fa-solid fa-arrow-right fa-2xl"></i></button>
 				<div class="search-box" style="margin-left:100px;">
 					<input type="text" id="search" name="searchId" placeholder="Search for an item ID in inventory">
 				</div>

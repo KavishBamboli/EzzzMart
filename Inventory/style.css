@@ -2,3 +2,99 @@ body {
 	margin: 0px;
 	background: url(../Resources/Images/inventory-bgimage.png);
 }
+
+#panel-buttons {
+    width: 600px;
+    margin-left: 50px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.panel-btn {
+    padding: 10px 15px;
+    margin: 20px;
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+    font-size: 20px;
+    border: 2px solid #000000;
+}
+
+.panel-btn:hover {
+    cursor: pointer;
+    background-color: #575757;
+    color: #ffffff;
+}
+
+.side-panel{
+	border:2px solid #000;
+	height:300px;
+	width:320px;
+	border-radius:3px; 
+	float:right;
+	right:50px;
+	margin-right:60px;
+}
+
+.side-panel-alignment h1{
+	display:block;
+	text-align:center;
+}
+
+.side-panel-alignment{
+	display:block;
+	text-align:center;
+}
+
+#side-panel-box{
+	width:300px;
+	height:150px;
+	border-radius:15px;
+	border:1px solid #000;
+	display:block;
+	text-align:center;
+}
+
+#right{
+	float:right;
+	border-collapse: collapse;
+	margin:0px;
+	gap:0px;
+}
+
+.sidey{
+	margin-top: 30px;
+}
+
+.data{
+	width:90%;
+	height:65%;
+}
+
+#search-result{
+	border:3px solid #000;
+	width:60%;
+	height:48%;
+	font-family: nunito;
+}
+
+#searchy{
+	border-collapse: collapse;
+	font-size:20px;
+	font-family:nunito;
+}
+
+a{
+	text-decoration: none;
+	color:black;
+}
+
+a:visited{
+	text-decoration: none;
+	color:black;
+}
+
+a:hover{
+	text-decoration: none;
+	color:rgb(39, 37, 37);
+}
