@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE! html>
 <html>
 <head>
     <title>Inventory | EzzzMart</title>
@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="../Resources/Styles/TableStyles.css">
 	<link rel="stylesheet" type="text/css" href="../Resources/Styles/FooterStyles.css">
 	<link rel="stylesheet" type="text/css" href="../Resources/Styles/SearchBoxStyles.css">
+	<link rel="stylesheet" type="text/css" href="../Resources/Styles/SearchResultsStyles.css">
+    <link rel="stylesheet" type="text/css" href="../Resources/Styles/ModalStyles.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 	<!-- <link rel="stylesheet" type="text/css" href="../Resources/Styles/SideBarStyles.css"> -->
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -15,12 +17,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/220800bffc.js" crossorigin="anonymous"></script>
-
-    <style>
-        
-    </style>
 </head>
-<body>
+<body onload="populateHeader()">
     <div class="header">
         <div class="company-name">
             <img src="../Resources/Images/defaultLogo.png" alt="" width="70px" height="70px">
@@ -52,26 +50,6 @@
                                     <th><strong>Item ID</strong></th>
                                     <th><strong>Quantity in Stock</strong></th>
                                 </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                
-                                <tr>
-                                    <td class="boxy" colspan="2" style="height:20px;width:10px;">
-                                      <center> <a href="#"><strong>View more&nbsp; <i class="fa-solid fa-caret-down"></i></strong></a></center>
-                                    </td>
-                                </tr>
                         </table>
                     </center></div>
                 </div>
@@ -84,34 +62,10 @@
                         <h1>Stock to be Replaced</h1>
                         <center>
                            <table class="data" border="1">
-                            <thead>
                                 <tr>
                                     <th>Item Id</th>
                                     <th>Reason</th>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                
-                                <tr>
-                                    <td class="boxy" colspan="2" style="height:20px;width:10px;">
-                                       <center><a href="#"><strong>View more&nbsp; <i class="fa-solid fa-caret-down"></i></strong></a></center>
-                                    </td>
-                                </tr>
-                            </tbody>
                         </table>
                     </center></div>
                 </div>
@@ -122,47 +76,85 @@
     
     <center>
     <div id="panel-buttons">
-        <button class="panel-btn">+ New Stock Item</button>
-        <button class="panel-btn">+ New Offer</button>
+        <button type="submit" class="panel-btn">+ New Stock Item</button>
+        <button type="submit" class="panel-btn">+ New Offer</button>
     </div></center>
 
+    <div class="myModal modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Enter Name:</h3>
+            <input type="text" class="inputText"><br>
+            <h3>Enter Tax Code:</h3>
+            <input type="text" class="inputText"><br>
+            <h3>Enter Cost Price:</h3>
+            <input type="number" class="inputText"><br>
+            <h3>Enter Selling Price:</h3>
+            <input type="text" class="inputText"><br>
+            <h3>Enter Quantity in stock:</h3><br>
+            <input type="text" class="inputText"><br>
+            <h3>Enter Supplier Id:</h3><br>
+            <input type="text" class="inputText"><br><br>
+            <button class="new-item-button" onclick="saveItemData()">Enter Stock Item</button>
+        </div>
+    </div>
+
+    <div class="myModal modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Enter Product Id:</h3>
+            <input type="number" class="inputText"><br>
+            <h3>Select offer Type:</h3>
+            <input type="radio" class="inputText" value="Discount" name="paid">Discount</input>
+            <input type="radio" class="inputText" value="Free item offered" name="paid">Free item offered</input><br>
+            <h3>Enter discount rate:</h3>
+            <input type="number" class="inputText"><br>
+            <h3>Enter product id of offered item:</h3>
+            <input type="number" class="inputText"><br><br>
+            <button class="new-item-button" onclick="saveOfferData()">Enter offer</button>
+        </div>
+    </div>
+
     <div>
-        <button class="go-btn" onclick="executeSearch()" style="top:235px;"><i class="fa-solid fa-arrow-right fa-2xl"></i></button>
+        <button class="go-btn" onclick="getItemData()" style="top:235px;"><i class="fa-solid fa-arrow-right fa-2xl"></i></button>
 				<div class="search-box" style="margin-left:100px;">
 					<input type="text" id="search" name="searchId" placeholder="Search for an item ID in inventory">
 				</div>
     </div><br><br>
 
-    <div id="search-result" style="margin-left:100px;padding:30px;">
-        <center>
-            <h2><ins>Search Results</ins></h2>
-        </center>
-            <table id="searchy" >
-                <tr>
-                    <td colspan="18"><strong>Item ID</strong></td>
-                    <td colspan="18">-</td>
-                </tr>
-                <tr>
-                    <td colspan="18"><strong>Item Name</strong></td>
-                    <td colspan="18">-</td>
-                </tr>
-                <tr>
-                    <td colspan="18"><strong>Cost Price</strong></td>
-                    <td colspan="18">-</td>
-                </tr>
-                <tr>
-                    <td colspan="18"><strong>Selling Price</strong></td>
-                    <td colspan="18">-</td>
-                </tr>
-                <tr>
-                    <td colspan="18"><strong>Quantity in Stock</strong></td>
-                    <td colspan="18">-</td>
-                </tr>
-                <tr>
-                    <td colspan="18"><strong>Supplier ID</strong></td>
-                    <td colspan="18">-</td>
-                </tr>
-            </table>
+    <div class="search-results-box">
+        <h2>Search Result</h2>
+        <div class="particulars">
+            <div class="particular">
+                <p class="heading">Product Id</p>
+                <p class="content">1001</p>
+            </div>
+            <div class="particular">
+                <p class="heading">Product Name</p>
+                <p class="content">1001</p>
+            </div>
+            <div class="particular">
+                <p class="heading">Tax Code</p>
+                <p class="content">1001</p>
+            </div>
+            <div class="particular">
+                <p class="heading">Cost Price</p>
+                <p class="content">1001</p>
+            </div>
+            <div class="particular">
+                <p class="heading">Selling Price</p>
+                <p class="content">1001</p>
+            </div>
+            <div class="particular">
+                <p class="heading">Quantity in Stock</p>
+                <p class="content">1001</p>
+            </div>
+            <div class="particular">
+                <p class="heading">Supplier Id</p>
+                <p class="content">1001</p>
+            </div>
+        </div>
     </div>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

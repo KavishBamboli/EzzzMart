@@ -71,30 +71,20 @@ body {
 	height:65%;
 }
 
-#search-result{
-	border:3px solid #000;
-	width:60%;
-	height:48%;
-	font-family: nunito;
+.search-results-box {
+	height: 500px;
 }
 
-#searchy{
-	border-collapse: collapse;
-	font-size:20px;
-	font-family:nunito;
+.new-item-button {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 4px;
+	border: 2px solid black;
+	background-color: #FFFFFF;
 }
 
-a{
-	text-decoration: none;
-	color:black;
-}
-
-a:visited{
-	text-decoration: none;
-	color:black;
-}
-
-a:hover{
-	text-decoration: none;
-	color:rgb(39, 37, 37);
+.new-item-button:hover {
+	background-color: #9E9E9E;
 }
