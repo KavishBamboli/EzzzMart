@@ -1,6 +1,7 @@
 const signUpButton = document.getElementById("signUp");
 const signInButton = document.getElementById("signIn");
 const container = document.getElementById("container");
+var storeDetails;
 
 signUpButton.addEventListener("click", () => {
   container.classList.add("right-panel-active");
@@ -11,9 +12,9 @@ signInButton.addEventListener("click", () => {
 });
 
 function signIn() {
-    var storeId = document.getElementsByTagName("form")[1].children[2].value;
-    var username = document.getElementsByTagName("form")[1].children[3].value;
-    var password = document.getElementsByTagName("form")[1].children[4].value;
+    var storeId = document.getElementsByClassName("form")[1].children[2].value;
+    var username = document.getElementsByClassName("form")[1].children[3].value;
+    var password = document.getElementsByClassName("form")[1].children[4].value;
 
     const xhttp = new XMLHttpRequest();
 	xhttp.onload = function() {
@@ -45,11 +46,11 @@ function signIn() {
 }
 
 function signUp() {
-    var storeName = document.getElementsByTagName("form")[0].children[2].value;
-    var email = document.getElementsByTagName("form")[0].children[3].value;
-    var address = document.getElementsByTagName("form")[0].children[4].value;
-    var gst = document.getElementsByTagName("form")[0].children[5].value;
-    var contact = document.getElementsByTagName("form")[0].children[6].value;
+    var storeName = document.getElementsByClassName("form")[0].children[2].value;
+    var email = document.getElementsByClassName("form")[0].children[3].value;
+    var address = document.getElementsByClassName("form")[0].children[4].value;
+    var gst = document.getElementsByClassName("form")[0].children[5].value;
+    var contact = document.getElementsByClassName("form")[0].children[6].value;
 
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
@@ -62,6 +63,7 @@ function signUp() {
             else
             {
                 alert("Store registered successfully");
+                createAdminUser();
                 window.location.href = "../AdminPage/admin.html";
             }
         }
@@ -80,6 +82,14 @@ function validateUser(usersData, username, password)
 }
 
 function getStoreDetails(storeId) {
+    for (let index = 0; index < storeDetails.length; index++) {
+        if(storeDetails[index].storeId == storeId)
+            sessionStorage.setItem("storeName", storeDetails[index].storeName);
+    }
+}
+
+function loadStoreDetails()
+{
     const xhttp = new XMLHttpRequest();
 	xhttp.onload = function() {
 		if(this.readyState == 4 && this.status == 200)
@@ -90,11 +100,26 @@ function getStoreDetails(storeId) {
 			}
 			else
 			{
-				var storeDetails = JSON.parse(this.responseText);
-                sessionStorage.setItem("storeName", storeDetails.storeName);
+				storeDetails = JSON.parse(this.responseText);
 			}
 		}
 	}
-	xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetStoreDetails.php?storeId="+storeId+"");
+	xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetStoreDetails.php");
+	xhttp.send();
+}
+
+function createAdminUser()
+{
+    loadStoreDetails();
+    var newStoreId = storeDetails[storeDetails.length - 1].storeId;
+
+    const xhttp = new XMLHttpRequest();
+	xhttp.onload = function() {
+		if(this.readyState == 4 && this.status == 200)
+		{
+            alert("Admin user created with username admin and password admin1234 which can be changed later");
+		}
+	}
+	xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/SaveEmployeeData.php?id="+newStoreId+"&username=admin&password=admin1234&role=admin");
 	xhttp.send();
 }

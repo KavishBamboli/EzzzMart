@@ -63,7 +63,7 @@
     min-height: 480px;
   }
   
-  .form-container form {
+  .form-container .form {
     background: var(--container-background-color);
     display: flex;
     align-items: center;

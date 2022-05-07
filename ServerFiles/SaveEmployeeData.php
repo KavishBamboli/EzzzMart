@@ -5,13 +5,12 @@
 		exit('Could not connect');
 	}
 
-	$storeName = $_GET["storeName"];
-	$email = $_GET["email"];
-	$address =  $_GET["address"];
-	$gst =  $_GET["gst"];
-	$contact =  $_GET["contact"];
+	$storeId = $_GET["id"];
+	$username = $_GET["username"];
+	$password =  $_GET["password"];
+	$role =  $_GET["role"];
 
-	$sql = "INSERT INTO store_details (StoreName, AddressLine1, GstNo, EmailID, ContactNo) values ('$storeName', '$address', '$gst', '$email', $contact)";
+	$sql = "INSERT INTO users (StoreID, UserName, Password, Role) values ($storeId, '$username', '$password', '$role')";
 
 	if($mysqli->query($sql) === TRUE)
 	{

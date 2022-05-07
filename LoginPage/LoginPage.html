@@ -6,11 +6,11 @@
             @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
         </style>
     </head>
-    <body>
+    <body onload="loadStoreDetails()">
         <div class="container" id="container">
             <div class="form-container sign-up-container">
                 <!-- Sign Up form code goes here -->
-                <form>
+                <div class="form">
                     <h1>Create Account</h1><br>
                     <input type="text" placeholder="Store Name" required/>
                     <input type="email" placeholder="Email" required/>
@@ -18,17 +18,17 @@
                     <input type="text" placeholder="GST No" required/>
                     <input type="text" placeholder="Contact No" required/>
                     <button onclick="signUp()">Sign Up</button>
-                </form>
+                </div>
             </div>
             <div class="form-container sign-in-container">
                 <!-- Sign In form code goes here -->
-                <form>
+                <div class="form">
                     <h1>Sign in</h1><br>
                     <input type="text" placeholder="Store ID" required/>
                     <input type="text" placeholder="Username" required/>
                     <input type="password" placeholder="Password" required/>
                     <button onclick="signIn()">Sign In</button>
-                </form>
+                </div>
             </div>
             <div class="overlay-container">
                 <!-- The overlay code goes here -->

@@ -1,11 +1,12 @@
 <?php
 	header('Access-Control-Allow-Origin: *');
+	$arr = array();
 	$mysqli = new mysqli("localhost", "root", "kavish1234", "ezzzmart");
 	if($mysqli->connect_error) {
 		exit('Could not connect');
 	}
 
-	$sql = "SELECT * FROM store_details where StoreID = " . $_GET['storeId'];
+	$sql = "SELECT * FROM store_details";
 
 	$result = $mysqli->query($sql);
 	if ($result->num_rows > 0) {
@@ -19,11 +20,15 @@
 	  	$store->gstNo = $row["GstNo"];
 	  	$store->emailID = $row["EmailID"];
 	  	$store->contactNo = $row["ContactNo"];
-	  	echo json_encode($store);
+		array_push($arr, $store);
 	  }
-	} else {
-	  echo "0 results";
 	}
+	
+	if(count($arr) == 0)
+		echo "0 results";
+	else
+		echo json_encode($arr);
+
 	class Store
 	{
 		public $storeId;
