@@ -64,7 +64,6 @@ function signUp() {
             {
                 alert("Store registered successfully");
                 createAdminUser();
-                window.location.href = "../AdminPage/admin.html";
             }
         }
     }
@@ -110,14 +109,19 @@ function loadStoreDetails()
 
 function createAdminUser()
 {
-    loadStoreDetails();
-    var newStoreId = storeDetails[storeDetails.length - 1].storeId;
+    var newStoreId = parseInt(storeDetails[storeDetails.length - 1].storeId) + 1;
 
     const xhttp = new XMLHttpRequest();
 	xhttp.onload = function() {
 		if(this.readyState == 4 && this.status == 200)
 		{
-            alert("Admin user created with username admin and password admin1234 which can be changed later");
+            if(this.responseText == "Success")
+            {
+                alert("Admin user created with username admin and password admin1234 which can be changed once you login as admin");
+                location.reload();
+            }
+            else
+                console.log(this.responseText);
 		}
 	}
 	xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/SaveEmployeeData.php?id="+newStoreId+"&username=admin&password=admin1234&role=admin");

@@ -10,7 +10,7 @@
     box-sizing:border-box;
     list-style-type:none;
     text-decoration:none;
-    font-family:roboto,sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .main-content{
@@ -248,4 +248,17 @@ td .status{
     .cards{
         grid-template-columns:100%;
     }
+}
+
+.view-more-btn {
+    padding: 4px 8px;
+    background: transparent;
+}
+
+.view-more-btn a {
+    color: black;
+}
+
+.view-more-btn:hover {
+	background-color: #9E9E9E;
 }

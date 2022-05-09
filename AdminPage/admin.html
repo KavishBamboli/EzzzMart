@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="loadData()">
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
         <div class="sidebar-brand">
@@ -71,8 +71,7 @@
             <div class="user-wrapper">
                 <img src="" alt="">
                 <div>
-                    <h4>Ananya</h4>
-                    <small>Super admin</small>
+                    <h4>Super Admin</h4>
                 </div>
             </div>
         </header>
@@ -122,89 +121,48 @@
                         <div class="card-body">
                             <div class="table-responsive">
                             <table width="100%">
-                                <thead>
-                                    <tr>
-                                        <td><strong>Inventory Items</strong></td>
-                                        <td><strong>Quantity</strong></td>
-                                        <td><strong>Price</strong></td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Choco Bakes</td>
-                                        <td>50 Boxes</td>
-                                        <td>
-                                            <span class="status"></span>
-                                            Rs.100 per box
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jam</td>
-                                        <td>100 Jars</td>
-                                        <td>
-                                            <span class="status"></span>
-                                            Rs.50 per Jar
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Juice Carton</td>
-                                        <td>40 Cartons</td>
-                                        <td>
-                                            <span class="status"></span>
-                                            Rs.30 per carton
-                                        </td>
-                                    </tr>
-                                </tbody>
+                                <tr>
+                                    <td><strong>Inventory Item</strong></td>
+                                    <td><strong>Quantity</strong></td>
+                                    <td><strong>Price</strong></td>
+                                </tr>
                             </table>
                             </div>
                         </div>
+                        <center><button class="view-more-btn"><a href="../Inventory/Inventory.html">View More</a></button></center>
                     </div>
                 </div>
 
                 <div class="customers">
                     <div class="card">
                     <div class="card-header">
-                        <h3>New Employee</h3>
+                        <h3>Active Employees</h3>
 
                     <!--    <button>See All<span class="las la-arrow-right"></span></button>-->
                     </div>
 
                     <div class="card-body">
                         <div class="customer">
+                            <div>
                                 <div>
-                                    <img src="" alt="employee photo">
-                                    <div>
                                     <h4>Kavish</h4>
                                     <small>Manager</small>
                                 </div>
-                                </div>
+                            </div>
                             <div>
                                 <span class="las la-user-circle"></span>
                                 <span class="las la-comment"></span>
                                 <span class="las la-phone"></span>
+                                <br>
                             </div>
-                        </div>
-                        
-                            <br><br>
-                            <div class="customer">
-                                <div>
-                                <img src="" alt="employee photo">
-                                <div>
-                                <h4>Ansh</h4>
-                                <small>Part-Timer</small>
-                            </div>
-                            </div>
-                        <div>
-                            <span class="las la-user-circle"></span>
-                            <span class="las la-comment"></span>
-                            <span class="las la-phone"></span>
-                        </div>
                         </div>
                     </div>
+                    <center><button class="view-more-btn"><a href="../Employees/Employee.html">View More</a></button></center>
                 </div>
                 </div>
             </div>
         </main>
     </div>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
