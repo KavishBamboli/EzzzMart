@@ -1,0 +1,33 @@
+.side-bar {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+	background-color: #FBA92C;
+    height: 320px;
+    width: 400px;
+    top: 90px;
+    left: 1107px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    animation: fade-in 1s;
+}
+
+.side-bar ul li{
+    list-style: none;
+    margin: 20px 0px;
+}
+
+.side-bar ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+.side-bar ul li a:hover {
+    color: white;
+}
+
+@keyframes fade-in {
+    from {left: 1500px;}
+    to {left: 1107px;}
+}

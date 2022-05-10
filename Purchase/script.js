@@ -217,3 +217,13 @@ function saveSupplierData()
 		xhttp.send();
 	}
 }
+
+function displayMenu()
+{
+	var sidebar = document.getElementsByClassName("side-bar")[0];
+	
+	if(sidebar.style.display == "flex")
+		sidebar.style.display = "none";
+	else
+		sidebar.style.display = "flex";
+}

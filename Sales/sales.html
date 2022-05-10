@@ -9,8 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../Resources/Styles/FooterStyles.css">
 	<link rel="stylesheet" type="text/css" href="../Resources/Styles/SearchBoxStyles.css">
 	<link rel="stylesheet" type="text/css" href="../Resources/Styles/MetricStyles.css">
-	<!-- <link rel="stylesheet" type="text/css" href="../Resources/Styles/SideBarStyles.css"> -->
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../Resources/Styles/SideNavMenuStyle.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +30,7 @@
 				<h3>Username</h3>
 			</div>
 			<div class="menu">
-				<a href=""><img src="../Resources/Images/dropdown.png" alt="" width="45px" height="30px"></a>
+				<a href="#"><img src="../Resources/Images/dropdown.png" alt="" width="45px" height="30px" onclick="displayMenu()"></a>
 			</div>
 		</div>
 	</div>
@@ -57,11 +56,17 @@
 					<input type="text" id="search" name="searchId" placeholder="Enter Search Id">
 				</div>
 			</div>
-			<!-- <div class="sales-tracker">
-				<h2>Monthly Sales Tracker</h2>
-				<progress value="50" max="100" id="progress-bar"></progress>
-			</div> -->
 		</div>
+
+		<div class="side-bar">
+			<ul>
+				<li><a href="../Sales/sales.html">Sales</a></li>
+				<li><a href="../Inventory/Inventory.html">Inventory</a></li>
+				<li><a href="../Purchase/purchase.html">Purchase</a></li>
+				<li><a href="../CRMPage/CRM.html">CRM</a></li>
+			</ul>
+		</div>
+
 		<div id="sales-details">
 			<div class="metrics">
 				<div class="metric">

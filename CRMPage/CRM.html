@@ -4,10 +4,12 @@
 <meta name="viewport" content="width=device-width, intial-scale=1.0">
 <title>Reviews</title>
 <link rel="stylesheet" href="../Resources/Styles/HeaderStyles.css"/>
+<link rel="stylesheet" href="../Resources/Styles/SideNavMenuStyle.css">
 <link rel="stylesheet" href="style.css">
 <link rel="shortcut icon" href="images/fav-icon.png"/>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 </head>
 <body onload="populateHeader()">
@@ -25,10 +27,20 @@
                 <h3>Username</h3>
             </div>
             <div class="menu">
-                <a href="#"><img src="../Resources/Images/dropdown.png" alt="" width="45px" height="30px"></a>
+                <a href="#"><img src="../Resources/Images/dropdown.png" alt="" width="45px" height="30px" onclick="displayMenu()"></a>
             </div>
         </div>
     </div>
+
+    <div class="side-bar">
+        <ul>
+            <li><a href="../Sales/sales.html">Sales</a></li>
+            <li><a href="../Inventory/Inventory.html">Inventory</a></li>
+            <li><a href="../Purchase/purchase.html">Purchase</a></li>
+            <li><a href="../CRMPage/CRM.html">CRM</a></li>
+        </ul>
+    </div>
+
     <section id="reviews">
         <div id="review-heading">
             <br><h2>Feedback</h2>

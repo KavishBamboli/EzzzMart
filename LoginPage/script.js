@@ -27,11 +27,19 @@ function signIn() {
 			else
 			{
 				var usersData = JSON.parse(this.responseText);
-                if(validateUser(usersData, username, password))
+                var isValidUser = validateUser(usersData, username, password);
+                if(isValidUser != "false")
                 {
                     alert("User Logged in successfully");
                     getStoreDetails(storeId);
-                    window.location.href = "../AdminPage/admin.html";
+                    
+                    if(isValidUser == "Cashier")
+                        window.location.href = "../Billing/billing.html";
+                    else if(isValidUser == "admin")
+                        window.location.href = "../AdminPage/admin.html";
+                    else
+                        window.location.href = "../Sales/sales.html";
+
                     sessionStorage.setItem("userName", username);
                 }
                 else
@@ -75,9 +83,9 @@ function validateUser(usersData, username, password)
 {
     for (let index = 0; index < usersData.length; index++) {
         if(username == usersData[index].userName && password == usersData[index].password)
-            return true;
+            return usersData[index].role;
     }
-    return false;
+    return "false";
 }
 
 function getStoreDetails(storeId) {
