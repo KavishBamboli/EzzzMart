@@ -51,25 +51,30 @@ function executeSearch() {
 	}
 	else
 	{
-		const xhttp = new XMLHttpRequest();
-		xhttp.onload = function() {
-			if(this.responseText == "0 results")
-			{
-				alert("No results found!");
+		if(/^\d+$/.test(searchSaleId.value))
+		{
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function() {
+				if(this.responseText == "0 results")
+				{
+					alert("No results found!");
+				}
+				else
+				{
+					responseObj = JSON.parse(this.responseText);
+					displayDetails(responseObj);
+					salesDetails.style.display = "block";
+					var metrics = document.getElementsByClassName("metric");
+					metrics[0].style.display = "none";
+					metrics[1].style.display = "none";
+					metrics[2].style.display = "none";
+				}
 			}
-			else
-			{
-				responseObj = JSON.parse(this.responseText);
-				displayDetails(responseObj);
-				salesDetails.style.display = "block";
-				var metrics = document.getElementsByClassName("metric");
-				metrics[0].style.display = "none";
-				metrics[1].style.display = "none";
-				metrics[2].style.display = "none";
-			}
+			xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetSalesDataUsingId.php?searchType=date&saleId="+searchSaleId.value+"");
+			xhttp.send();
 		}
-		xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetSalesDataUsingId.php?searchType=date&saleId="+searchSaleId.value+"");
-		xhttp.send();
+		else
+			alert("Invalid sale ID. It should contain only numbers");
 	}
 	
 }

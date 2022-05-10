@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../Resources/Styles/SideBarStyles.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Resources/Styles/ModalStyles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto+Slab&display=swap" rel="stylesheet">
@@ -31,15 +32,49 @@
                 </li>
 
                 <li>
-                    <a href="../Sales/sales.html"><span class="las la-clipboard-list"></span>
+                    <a href="#"><span class="las la-clipboard-list"></span>
                     <span>Create New Employee</span></a>
                 </li>
 
                 <li>
-                    <a href="../Billing/billing.html"><span class="las la-receipt"></span>
+                    <a href="#"><span class="las la-receipt"></span>
                     <span>Change admin password</span></a>
                 </li>
             </ul>
+        </div>
+    </div>
+
+    <div class="myModal modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Enter Employee name:</h3><br>
+            <input type="text" class="inputText"><br><br>
+            <h3>Enter Address Line 1:</h3><br>
+            <input type="text" class="inputText"><br><br>
+            <h3>Enter Address Line 2:</h3><br>
+            <input type="text" class="inputText"><br><br>
+            <h3>Enter Bank account number:</h3><br>
+            <input type="number" class="inputText"><br><br>
+            <h3>Enter Salary:</h3><br>
+            <input type="number" class="inputText"><br><br>
+            <h3>Enter Contact No:</h3><br>
+            <input type="number" class="inputText"><br><br>
+            <h3>Enter Role:</h3><br>
+            <input type="text" class="inputText"><br><br>
+            <h3>Enter Password for employee login:</h3><br>
+            <input type="password" class="inputText"><br><br>
+            <button class="new-item-button" onclick="saveEmployeeData()">Enter Employee</button>
+        </div>
+    </div>
+
+    <div class="myModal modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Enter new password:</h3><br>
+            <input type="password" class="inputText"><br><br>
+            <h3>Confirm new password:</h3><br>
+            <input type="password" class="inputText"><br><br>
+            <button class="new-item-button" onclick="changePassword()">Change password</button>
         </div>
     </div>
 

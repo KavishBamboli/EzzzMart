@@ -262,3 +262,17 @@ td .status{
 .view-more-btn:hover {
 	background-color: #9E9E9E;
 }
+
+.new-item-button {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 4px;
+	border: 2px solid black;
+	background-color: #FFFFFF;
+}
+
+.new-item-button:hover {
+	background-color: #9E9E9E;
+}

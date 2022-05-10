@@ -41,6 +41,7 @@ function signIn() {
                         window.location.href = "../Sales/sales.html";
 
                     sessionStorage.setItem("userName", username);
+                    sessionStorage.setItem("StoreId", storeId);
                 }
                 else
                 {
@@ -60,24 +61,52 @@ function signUp() {
     var gst = document.getElementsByClassName("form")[0].children[5].value;
     var contact = document.getElementsByClassName("form")[0].children[6].value;
 
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        if(this.readyState == 4 && this.status == 200)
-        {
-            if(this.responseText == "Failed")
+    if(storeName != "" && validateEmail(email) && address != "" && validateGst(gst) && validateContact(contact))
+    {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            if(this.readyState == 4 && this.status == 200)
             {
-                alert("There was a problem registering your store! Please try again later!")
-            }
-            else
-            {
-                alert("Store registered successfully");
-                createAdminUser();
+                if(this.responseText == "Failed")
+                {
+                    alert("There was a problem registering your store! Please try again later!")
+                }
+                else
+                {
+                    alert("Store registered successfully");
+                    createAdminUser();
+                }
             }
         }
+        xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/SaveStoreData.php?storeName="+storeName+"&email="+email+"&address="+address+"&gst="+gst+"&contact="+contact+"");
+        xhttp.send();
     }
-    xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/SaveStoreData.php?storeName="+storeName+"&email="+email+"&address="+address+"&gst="+gst+"&contact="+contact+"");
-    xhttp.send();
 }
+
+function validateEmail(email)
+{
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+        return true;
+    alert("You have entered an invalid email address!");
+    return false;
+}
+
+function validateContact(contact)
+{
+    if(/^\d{10}$/.test(contact))
+        return true;
+    alert("You have entered an invalid phone number");
+    return false;
+}
+
+function validateGst(gst)
+{
+    if(/^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/.test(gst))
+        return true;
+    alert("You have entered an invalid gst number");
+    return false;
+}
+
 
 function validateUser(usersData, username, password)
 {

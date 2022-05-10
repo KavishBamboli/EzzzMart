@@ -1,27 +1,33 @@
 function getEmployeeById() {
     var employeeId = document.getElementById("search").value;
-    const xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200)
-		{
-			if(this.responseText == "0 results")
-			{
-				alert("No results found!");
-			}
-			else
-			{
-				var employeeData = JSON.parse(this.responseText);
-                displayEmployeeData(employeeData);
-                var searchResult = document.getElementsByClassName("search-results-box")[0];
-                searchResult.style.display = "block";
 
-                var tableWrapper = document.getElementsByClassName("table-wrapper")[0];
-                tableWrapper.style.display = "none";
+	if(/^\d+$/.test(employeeId))
+	{
+		const xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if(this.readyState == 4 && this.status == 200)
+			{
+				if(this.responseText == "0 results")
+				{
+					alert("No results found!");
+				}
+				else
+				{
+					var employeeData = JSON.parse(this.responseText);
+					displayEmployeeData(employeeData);
+					var searchResult = document.getElementsByClassName("search-results-box")[0];
+					searchResult.style.display = "block";
+
+					var tableWrapper = document.getElementsByClassName("table-wrapper")[0];
+					tableWrapper.style.display = "none";
+				}
 			}
 		}
+		xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetEmployeeDetails.php?employeeId="+employeeId+"");
+		xhttp.send();
 	}
-	xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetEmployeeDetails.php?employeeId="+employeeId+"");
-	xhttp.send();
+	else
+		alert("Invalid Employee ID. It should contain only numbers");
 }
 
 function getAllEmployees()

@@ -87,31 +87,37 @@ function displayReplaceItemsData(itemData)
 function getItemData()
 {
     var id = document.getElementById("search").value;
-    const xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200)
-		{
-			if(this.responseText == "0 results")
-			{
-				alert("No results found!");
-			}
-			else
-			{
-				var itemData = JSON.parse(this.responseText);
-                
-                var particulars = document.getElementsByClassName("particular");
 
-                for (let index = 0; index < particulars.length; index++) {
-                    particulars[index].children[1].innerHTML = Object.values(itemData)[index];
+    if(/^\d+$/.test(id))
+    {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if(this.readyState == 4 && this.status == 200)
+            {
+                if(this.responseText == "0 results")
+                {
+                    alert("No results found!");
                 }
-                
-                var searchResult = document.getElementsByClassName("search-results-box")[0];
-                searchResult.style.display = "block";
-			}
-		}
-	}
-	xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetInventoryDataUsingId.php?id="+id+"");
-	xhttp.send();
+                else
+                {
+                    var itemData = JSON.parse(this.responseText);
+                    
+                    var particulars = document.getElementsByClassName("particular");
+
+                    for (let index = 0; index < particulars.length; index++) {
+                        particulars[index].children[1].innerHTML = Object.values(itemData)[index];
+                    }
+                    
+                    var searchResult = document.getElementsByClassName("search-results-box")[0];
+                    searchResult.style.display = "block";
+                }
+            }
+        }
+        xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetInventoryDataUsingId.php?id="+id+"");
+        xhttp.send();
+    }
+    else
+        alert("Invalid ID. It should contain only numbers");
 }
 
 var modal = document.getElementsByClassName("myModal");

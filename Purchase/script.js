@@ -81,7 +81,6 @@ function executeSearch() {
 		}
 		else
 		{
-			// Call php file to get data
 			const xhttp = new XMLHttpRequest();
 			xhttp.onload = function() {
 				if(this.responseText == "0 results")
@@ -103,22 +102,27 @@ function executeSearch() {
 	}
 	else
 	{
-		const xhttp = new XMLHttpRequest();
-		xhttp.onload = function() {
-			if(this.responseText == "0 results")
-			{
-				alert("No results found!");
+		if(/^\d+$/.test(purchaseId.value))
+		{
+			const xhttp = new XMLHttpRequest();
+			xhttp.onload = function() {
+				if(this.responseText == "0 results")
+				{
+					alert("No results found!");
+				}
+				else
+				{
+					responseObj = JSON.parse(this.responseText);
+					displayDetails(responseObj);
+					var tableWrapper = document.getElementsByClassName("tableWrapper")[0];
+					tableWrapper.style.display = "block";
+				}
 			}
-			else
-			{
-				responseObj = JSON.parse(this.responseText);
-				displayDetails(responseObj);
-                var tableWrapper = document.getElementsByClassName("tableWrapper")[0];
-                tableWrapper.style.display = "block";
-			}
+			xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetPurchaseDataUsingId.php?purchaseId="+purchaseId.value+"");
+			xhttp.send();
 		}
-		xhttp.open("POST", "http://localhost/EzzzMart/ServerFiles/GetPurchaseDataUsingId.php?purchaseId="+purchaseId.value+"");
-		xhttp.send();
+		else
+			alert("Invalid purchase ID. It should contain only numbers");
 	}
 }
 

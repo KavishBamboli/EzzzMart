@@ -160,11 +160,17 @@ function generateBill()
 	}
 	else
 	{
-		saveData(saleId, date, customerName, totalBillAmt);
-		alert("Bill generated successfully");
-		saleId++;
-		var saleIdField = document.getElementsByClassName("input-fields")[0].children[2];
-		saleIdField.value = saleId;
+		var today = new Date();
+		if(date > today.toISOString().substr(0, 10))
+			alert("Date cannot be greater than today");
+		else
+		{
+			saveData(saleId, date, customerName, totalBillAmt);
+			alert("Bill generated successfully");
+			saleId++;
+			var saleIdField = document.getElementsByClassName("input-fields")[0].children[2];
+			saleIdField.value = saleId;
+		}
 	}
 }
 
@@ -174,6 +180,6 @@ function saveData(saleId, date, customerName, billAmt)
 	xhttp.onload = function() {
 		console.log(this.responseText);
 	}
-	xhttp.open("GET", "http://localhost/EzzzMart/ServerFiles/SaveSalesData.php?saleId="+saleId+"&date="+date+"&customerName="+customerName+"&billAmt="+billAmt+"&onlineSale=No&salesChannel=cash&billedBy="+document.getElementsByClassName("username")[0].children[1].innerHTML+"");
+	xhttp.open("GET", "http://localhost/EzzzMart/ServerFiles/SaveSalesData.php?saleId="+saleId+"&date="+date+"&customerName="+customerName+"&billAmt="+billAmt+"&onlineSale=No&salesChannel=cash&billedBy="+sessionStorage.getItem("userName")+"");
 	xhttp.send();
 }
