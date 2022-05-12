@@ -250,6 +250,12 @@ td .status{
     }
 }
 
+.view-more-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
 .view-more-btn {
     padding: 4px 8px;
     background: transparent;

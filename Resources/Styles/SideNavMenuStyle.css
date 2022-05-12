@@ -3,13 +3,14 @@
     display: none;
     flex-direction: column;
 	background-color: #FBA92C;
-    height: 320px;
+    height: 380px;
     width: 400px;
     top: 90px;
     left: 1107px;
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
     animation: fade-in 1s;
+    z-index: 12;
 }
 
 .side-bar ul li{
